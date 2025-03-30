@@ -41,10 +41,34 @@ const generateBookList=(books)=>{
 
 // Создай `ul` и две кнопки: `"Добавить"` и`"Удалить"`.По клику `"Добавить"` в список добавляется новый `li` с текстом`"Элемент X"`, где X — порядковый номер.По клику `"Удалить"` удаляется последний элемент списка. 
 
+
+
 const ulEll = document.createElement('ul')
-document.body.append(ulEll)
-const liEll = document.createElement('li')
-liEll.append(ul)
+document.body.prepend(ulEll)
+
+const buttonEll = document.createElement('button')
+buttonEll.innerText = 'Добавить'
+document.body.append(buttonEll)
+buttonEll.addEventListener('click', (e)=>{
+    const liEll = document.createElement('li')
+    ulEll.append(liEll)
+    liEll.innerText='Элемент X'
+
+
+})
+const btmEll = document.createElement('button')
+btmEll.innerText = 'Удалить'
+document.body.append(btmEll)
+btmEll.addEventListener('click',(e)=>{
+    // liEll.remove(ulEll)
+})
+
+
+
+
+
+
+
 
 
 // const books = [
