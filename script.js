@@ -27,10 +27,10 @@
 
 //  Напиши функцию `generateBookList(books)`, которая принимает массив объектов `books`, где каждый объект содержит `title` и `author`. Функция должна создать список (`ul`), в котором каждый элемент (`li`) содержит название книги и автора, а затем добавить этот список в `body`.  
 
-const generateBookList=(books)=>{
- const ulEll = document.createElement('ul')
+const generateBookList = (books) => {
+    const ulEll = document.createElement('ul')
 
- `
+        `
 <ul>
 <li></li>
 </ul>
@@ -49,47 +49,39 @@ document.body.prepend(ulEll)
 const buttonEll = document.createElement('button')
 buttonEll.innerText = 'Добавить'
 document.body.append(buttonEll)
-buttonEll.addEventListener('click', (e)=>{
+buttonEll.addEventListener('click', (e) => {
     const liEll = document.createElement('li')
     ulEll.append(liEll)
-    liEll.innerText='Элемент X'
+    liEll.innerText = 'Элемент X'
 
 
 })
 const btmEll = document.createElement('button')
 btmEll.innerText = 'Удалить'
 document.body.append(btmEll)
-btmEll.addEventListener('click',(e)=>{
+btmEll.addEventListener('click', (e) => {
     // liEll.remove(ulEll)
 })
 
 
-
-
-
-
-
-
-
-const books = [
-  { title: "Гарри Поттер", author: "Дж. К. Роулинг" },
-  { title: "1984", author: "Джордж Оруэлл" },
-  { title: "Мастер и Маргарита", author: "М. А. Булгаков" }
-];
+// const books = [
+//     { title: "Гарри Поттер", author: "Дж. К. Роулинг" },
+//     { title: "1984", author: "Джордж Оруэлл" },
+//     { title: "Мастер и Маргарита", author: "М. А. Булгаков" }
+// ];
 
 // Создай список(`ul > li`).При клике на `li` он становится синим, а все остальные возвращаются к стандартному цвету.  
 
-const ulEl = document.createElement('ul')
-document.body.append(ulEl)
-const liEl =document.createElement('li')
-ulEl.append(liEl)
+// const ulEl = document.createElement('ul')
+// document.body.append(ulEl)
+// const liEl = document.createElement('li')
+// ulEl.append(liEl)
 // for(i=0;i<books.length; i++){
-books.forEach(item=>{
-    ulEl += `
-    <li>${item}</li>
-    `
-})
-
+// books.forEach(item => {
+//     ulEl += `
+//     <li>${item}</li>
+//     `
+// })
 
 // }
 
@@ -107,6 +99,22 @@ books.forEach(item=>{
 
 // Создай список (`ul`), в котором будет 5 элементов (`li`). Добавь этим элементам классы `odd` (нечётные) и `even` (чётные). Используй `style` для изменения цветов: чётные элементы должны быть синими, нечётные — зелёными.  
 
+const ulList= document.createElement('ul')
+document.body.append(ulList)
+for(i=0; i<5;i++){
+    const liList = document.createElement('li')
+    ulList.append(liList)
+    liList.classList.add('odd')
+    liList.innerHTML='нечётные'
+    liList.style.color='blue'
+}
+for(i=0; i<5;i++){
+    const liList = document.createElement('li')
+    ulList.append(liList)
+    liList.classList.add('even')
+    liList.innerHTML='чётные'
+    liList.style.color='green'
+}
 // На странице есть 3 кнопки с классами `.btn`. Напиши скрипт, который получит все кнопки (`document.querySelectorAll`), а затем выведет в консоль текст каждой кнопки с помощью метода массива.  
 
 
@@ -146,7 +154,7 @@ books.forEach(item=>{
 const numbers = [10, 5, 30, 8, 20]
 // "Оставить четные" — оставляет только четные числа и выводит их.
 // "Отсортировать по возрастанию" — сортирует массив и выводит его.
-const evenNumber = numbers.fill(num=> num%2===0)
+const evenNumber = numbers.fill(num => num % 2 === 0)
 console.log(evenNumber);
-const sortNumber = numbers.sort((a,b)=>a-b)
+const sortNumber = numbers.sort((a, b) => a - b)
 console.log(sortNumber);
